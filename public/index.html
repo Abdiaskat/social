@@ -1,13 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <p>Hi! Dude!!!!</p>
+    <div class="container" ng-controller="myCtrl">
+        <h1>A table with add button{{lorem}}</h1>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="danger">
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-warning" ng-repeat="member in members.items">
+                            <td>{{member.name}}</td>
+                            <td>{{member.surname}}</td>
+                            <td>{{member.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn btn-success"><i class="fa fa-plus"></i>Add new</button>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/myapp.js"></script>
 </body>
 </html>
